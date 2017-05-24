@@ -4,6 +4,6 @@ An immortal object resurrects itself by calling GC.ReRegisterForFinalize(this); 
 
 It says on MSDN: The runtime continues to finalize objects during shutdown only while the number of finalizable objects continues to decrease. After the immortal object has been finalized, there is one object (which is the immortal) is among finalizable objects every time, so the number of finalizable objects does not continue to decrease. Therefore, finalization stops and the object dies.
 
-To verify the said above we need to go deeper in GC algorithms. That's does not appear to be possible or reasonable.
+To verify the said above we need to go deeper in GC algorithms.
 
 Anyway, when the Main method is finished, messages about finalization of the immortal object will continue to appear in console for some time (for that finalizations, which occurred before an application shutdown) and then will stop.
